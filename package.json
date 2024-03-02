@@ -1,0 +1,22 @@
+{
+  "name": "4-urlshortnerproject",
+  "type" : "module",
+  "version": "1.0.0",
+  "description": "this will short your long URL in tiny one.",
+  "main": "script.js",
+  "scripts": {
+    "start" : "nodemon script.js",
+    "test": "start"
+  },
+  "keywords": [
+    "URL",
+    "urlShortner"
+  ],
+  "author": "trisha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "nanoid": "^5.0.6",
+    "nodemon": "^3.1.0"
+  }
+}
