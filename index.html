@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL shortner application</title>
+  </head>
+  <body>
+    <h2>URL shortner</h2>
+    <form action="http://localhost:5000/URLshortner" method="post">
+      <div class="col-11">
+        <input
+          class="textbox-11"
+          type="url"
+          id="longURL"
+          name="longURL"
+          placeholder="Enter Long URL"
+        />
+        <span class="focus-border-11"></span>
+      </div>
+      <br />
+      <div class="col-11">
+        <input
+          class="textbox-11"
+          type="text"
+          id="customURL"
+          name="customURL"
+          placeholder="Customize your URL"
+        />
+        <span class="focus-border-11"></span>
+      </div>
+      <br />
+      <button type="submit">Shorten it!</button>
+    </form>
+  </body>
+</html>

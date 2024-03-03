@@ -7,26 +7,29 @@ import path from "path";
 const app = express();
 app.use(express.json());
 
-const validURL = (url) =>{
-    try{
-        new URL(url);
-        return true;
-    }catch(error){
-        return false;
-    }
-}
+const validURL = (url) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
 
 //todo: post API calling for generate and store short URL
 app.post("/URLshortner", (req, res) => {
   const longURL = req.body.url;
-  const urlCode = nanoid(6);
-  const valid = validURL(longURL)
+  const customURL = req.body.name;
+  const urlCode = customURL ? customURL : nanoid(6);
+  const valid = validURL(longURL);
 
   //* store the urlcode and long url in a file
   const fileRes = fs.readFileSync("URLdata.json");
   const fileData = JSON.parse(fileRes.toString());
   fileData[urlCode] = longURL;
   fs.writeFileSync("URLdata.json", JSON.stringify(fileData));
+  // if (valid)
+  //   return res.status(400).send({ success: false, Error: "Invalid URL!" });
 
   res.json({
     success: true,
